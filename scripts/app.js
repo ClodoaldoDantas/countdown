@@ -57,7 +57,9 @@ function startTimer() {
       updateDisplay();
     } else {
       pauseTimer();
-      alert("Time's up!");
+
+      const audio = new Audio("../assets/clock-alarm.mp3");
+      audio.play();
     }
   }, 1000);
 }
