@@ -7,7 +7,7 @@ const pauseButton = document.getElementById("btn-pause");
 const resetButton = document.getElementById("btn-reset");
 const timerDisplay = document.getElementById("timer");
 
-let totalSeconds = 60 * 30; // 30 minutes
+let totalSeconds = 60 * 30;
 let intervalId = null;
 
 const showPauseButton = () => {
@@ -74,6 +74,7 @@ function toggleFullscreen() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", updateDisplay);
 startButton.addEventListener("click", startTimer);
 pauseButton.addEventListener("click", pauseTimer);
 resetButton.addEventListener("click", resetTimer);
