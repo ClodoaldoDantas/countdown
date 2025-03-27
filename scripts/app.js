@@ -1,13 +1,15 @@
 import { SECONDS_IN_HOUR, SECONDS_IN_MINUTE } from "./constants.js";
-import { formatTime } from "./utils.js";
+import { formatTime, validateTime, timeToSeconds } from "./utils.js";
 
-const fullscreenButton = document.getElementById("btn-fullscreen");
 const startButton = document.getElementById("btn-start");
 const pauseButton = document.getElementById("btn-pause");
 const resetButton = document.getElementById("btn-reset");
+const fullscreenButton = document.getElementById("btn-fullscreen");
+const editButton = document.getElementById("btn-edit");
 const timerDisplay = document.getElementById("timer");
 
-let totalSeconds = 60 * 30;
+let timeString = "00:00:00";
+let totalSeconds = 0;
 let intervalId = null;
 
 const showPauseButton = () => {
@@ -61,7 +63,7 @@ function startTimer() {
 }
 
 function resetTimer() {
-  totalSeconds = 60 * 30;
+  totalSeconds = timeToSeconds(timeString);
   pauseTimer();
   updateDisplay();
 }
@@ -74,8 +76,18 @@ function toggleFullscreen() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", updateDisplay);
+function editTimer() {
+  const newTime = prompt("Insira o tempo no formato HH:MM:SS", timeString);
+
+  if (newTime && validateTime(newTime)) {
+    timeString = newTime;
+    totalSeconds = timeToSeconds(newTime);
+    updateDisplay();
+  }
+}
+
 startButton.addEventListener("click", startTimer);
 pauseButton.addEventListener("click", pauseTimer);
 resetButton.addEventListener("click", resetTimer);
 fullscreenButton.addEventListener("click", toggleFullscreen);
+editButton.addEventListener("click", editTimer);
