@@ -1,3 +1,4 @@
 ## ⏲️ Temporizador com Vanilla Javascript
 
-![image](https://github.com/user-attachments/assets/89b4d02b-a71c-40ef-91e1-78677ce67201)
+![image](https://github.com/user-attachments/assets/7c1383e9-99ce-4d24-a671-e0f5452c79dd)
+
