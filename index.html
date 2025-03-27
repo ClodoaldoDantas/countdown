@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Temporizador</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="timer" id="timer">00:00:00</div>
+
+      <div class="actions">
+        <button id="btn-fullscreen" aria-label="Configurar">
+          <i class="ph ph-cog"></i>
+        </button>
+
+        <button id="btn-fullscreen" aria-label="Tela Cheia">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <button id="btn-start" aria-label="Iniciar">
+          <i class="ph ph-play"></i>
+        </button>
+
+        <button id="btn-pause" aria-label="Pausar">
+          <i class="ph ph-pause"></i>
+        </button>
+
+        <button id="btn-reset" aria-label="Reiniciar">
+          <i class="ph ph-arrow-counter-clockwise"></i>
+        </button>
+      </div>
+    </main>
+
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>
